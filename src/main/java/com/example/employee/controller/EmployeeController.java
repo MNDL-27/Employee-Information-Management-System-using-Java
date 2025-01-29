@@ -14,14 +14,14 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
-    @PostMapping
-    public Employee addEmployee(@RequestBody Employee employee) {
-        return employeeService.saveEmployee(employee);
-    }
-
     @GetMapping
     public List<Employee> getAllEmployees() {
-        return employeeService.findAllEmployees();
+        return employeeService.getAllEmployees();
+    }
+
+    @PostMapping
+    public Employee createEmployee(@RequestBody Employee employee) {
+        return employeeService.createEmployee(employee);
     }
 
     @GetMapping("/{id}")
